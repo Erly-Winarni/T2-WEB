@@ -7,5 +7,14 @@ class ItemBase(BaseModel):
 class ItemResponse(ItemBase):
     id: int
 
+class UserCreate(BaseModel):
+    username: str
+    password: str
+    role: str = "user"
+
+class UserLogin(BaseModel):
+    username: str
+    password: str
+
     class Config:
         orm_mode = True
